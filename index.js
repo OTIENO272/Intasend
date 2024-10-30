@@ -51,7 +51,7 @@ app.get("/transact/:number/:amount/:website", (req, res) => {
       host: website,
       amount: amount,
       phone_number: phoneNumber,
-      api_ref: "test",
+      api_ref: "live",
     })
     .then((resp) => {
       // Redirect user to URL to complete payment
