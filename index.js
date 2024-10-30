@@ -36,10 +36,10 @@ app.get("/transact/:number/:amount/:website", (req, res) => {
 
   //console.log(phoneNumber);
   //console.log(amount);
-
+  /* 
   res.send(
     "<h1 style='color:green;text-align:center'>Initiate transaction</h1>"
-  );
+  ); */
 
   //Where the magic happens!
   let collection = intasend.collection();
