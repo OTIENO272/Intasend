@@ -65,6 +65,26 @@ app.get("/transact/:number/:amount/:website", (req, res) => {
     });
 });
 
+//Getting Payment status
+app.get("/status/:invoiceId", (req, res) => {
+  const invoiceId = req.params.invoiceId;
+
+  let collection = intasend.collection();
+
+  collection
+    .status(invoiceId)
+    .then((resp) => {
+      // Redirect user to URL to complete payment
+      console.log(`Status Resp:`, resp);
+
+      //Sending response to client side
+      res.send(resp);
+    })
+    .catch((err) => {
+      console.error(`Status Resp error:`, err);
+    });
+});
+
 app.listen(port, () => {
   console.log("Server is running on port " + port);
 });
