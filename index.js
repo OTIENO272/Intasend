@@ -51,11 +51,14 @@ app.get("/transact/:number/:amount/:website", (req, res) => {
       host: website,
       amount: amount,
       phone_number: phoneNumber,
-      api_ref: "live",
+      api_ref: "live", //Make live for production
     })
     .then((resp) => {
       // Redirect user to URL to complete payment
       console.log(`STK Push Resp:`, resp);
+
+      //Sending Data to Client side
+      res.send(resp);
     })
     .catch((err) => {
       console.error(`STK Push Resp error:`, err);
