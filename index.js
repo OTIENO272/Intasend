@@ -5,7 +5,7 @@ const app = express();
 const port = 3000;
 const params = require("express-params");
 
-const IntaSend = require("intasend-node");
+ const IntaSend = require("intasend-node");
 
 //Enabling Access from any origin using express middlewares
 app.use(cors());
